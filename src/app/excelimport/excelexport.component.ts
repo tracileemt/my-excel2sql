@@ -42,7 +42,6 @@ export class ExcelexportComponent implements OnInit {
       {
         this.dbColumns = result;
     });
-
   }
 }
 
