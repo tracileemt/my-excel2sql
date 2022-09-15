@@ -25,10 +25,7 @@ export class ExcelexportComponent implements OnInit {
       // next: users => {
          this.dbTables = result;
 
-      // },
-      // error: err => {
-      //   this.usererrors = err
-      // }
+
       });
   }
 

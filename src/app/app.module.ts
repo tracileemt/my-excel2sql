@@ -10,13 +10,21 @@ import { ExcelexportComponent } from './excelimport/excelexport.component';
 import { WelcomeComponent } from './excelimport/welcome.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExcelimportComponent,
     ExcelexportComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +40,12 @@ import { RouterModule } from '@angular/router';
       { path:'', redirectTo: 'welcome', pathMatch: 'full'} ,
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
