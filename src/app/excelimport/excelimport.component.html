@@ -1,0 +1,87 @@
+<div class="container">
+  <br>
+  <h1 align='center'>Excel2Sql</h1>
+  <hr>
+  <div class="row">
+      <div class="co-md-4">
+          <input class="form-control" type="file" #fileInput  />
+      </div>
+      <div class="col-md-1">
+          <button  class="btn btn-primary" (click)="uploadFile();">Upload</button>
+      </div>
+      <div class="col-md-2">
+          <button  class="btn btn-primary" (click)="clear();">Clear</button>
+      </div>
+
+
+  </div>
+  <div>
+      <h4 class="alert-success">{{message}}</h4>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+          <button class='btn btn-danger'  (click)='exportexcel()' *ngIf='showTable'>Export Errors to Excel</button>
+      </div>
+  </div>
+  <div>
+
+      <table id="errors-table" class="errors-table" *ngIf='showTable'>
+          <tr class="btn-primary">
+              <th>User Id</th>
+              <th>UserName</th>
+              <th>EmailAddress</th>
+              <th>Gender</th>
+              <th>Address</th>
+              <th>PhoneNumber</th>
+              <th>PinCode</th>
+              <th>IsAdmin</th>
+              <th>Errors</th>
+
+          </tr>
+
+          <tr *ngFor="let user of usererrors" style="color:red">
+
+              <td style="width: 100px; color:red">{{user.UserId}}</td>
+              <td>{{user.UserName }}</td>
+              <td>{{user.EmailAddress}}</td>
+              <td>{{user.Gender}}</td>
+              <td>{{user.Address}}</td>
+              <td style="width: 200px">{{user.PhoneNumber}}</td>
+              <td>{{user.PinCode}}</td>
+              <td>{{user.IsAdmin}}</td>
+              <td>{{user.Error}}</td>
+
+
+          </tr>
+
+      </table>
+      <table class="import-table" *ngIf='showTable'>
+          <tr class="btn-primary">
+              <th>User Id</th>
+              <th>UserName</th>
+              <th>EmailAddress</th>
+              <th>Gender</th>
+              <th>Address</th>
+              <th>PhoneNumber</th>
+              <th>PinCode</th>
+              <th>IsAdmin</th>
+
+
+          </tr>
+
+          <tr *ngFor="let user of allUsersImported">
+              <td style="width: 100px">{{user.UserId}}</td>
+              <td>{{user.UserName }}</td>
+              <td>{{user.EmailAddress}}</td>
+              <td>{{user.Gender}}</td>
+              <td>{{user.Address}}</td>
+              <td style="width: 200px">{{user.PhoneNumber}}</td>
+              <td>{{user.PinCode}}</td>
+              <td>{{user.IsAdmin}}</td>
+
+          </tr>
+
+
+      </table>
+  </div>
+</div>

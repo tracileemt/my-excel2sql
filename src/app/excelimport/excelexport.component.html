@@ -1,0 +1,28 @@
+
+<div class="container">
+  <br>
+  <h1 align='center'>Export SQL</h1>
+  <hr>
+  <div class="col">
+    <br/>
+    <div class="row">
+      <div class="col">
+        <div class="row ml-3 mr-3 mt-3">
+          <label class="col-form-label">Select Table :</label>
+          <select [(ngModel)]="table" class="form-control" >
+             <option value=""> Please choose one </option>
+             <option *ngFor="let table of dbTables" [value]="table">{{table}}</option>
+          </select>
+      </div>
+      </div>
+      <div class="col">
+        <div class="row ml-3 mr-3 mt-3">
+          <label class="col-form-label">Select Columns :</label>
+          <select  class="form-control">
+              <option value=""> Please choose one </option>
+              <option *ngFor="let field of dbColumns">{{field}}</option>
+          </select>
+      </div>
+</div>
+
+
